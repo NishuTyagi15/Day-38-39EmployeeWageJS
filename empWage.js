@@ -37,3 +37,17 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
 }
 let empWage = calcEmpDailyWage(totalEmpHrs);
 console.log("Total Working Days: "+totalWorkingDays +" Total Working Hours: "+totalEmpHrs +" Employee Wage: "+empWage);
+
+//Array Helper Functions
+//UC-7A Calculate Total Wage Using Array forEach Traversal or Reduce Method
+let totalEmpWage = 0;
+function sum(dailyWage) {
+    totalEmpWage += dailyWage;
+}
+empDailyWageArr.forEach(sum);
+console.log("UC-7A Total Working Days: "+totalWorkingDays + " Total Working Hours: "+totalEmpHrs + " Employee Wage: "+totalEmpWage);
+
+function totalWages(totalWage, dailyWage) {
+    return totalWage + dailyWage;
+}
+console.log("UC-7A Emp Wage With Reduce: "+empDailyWageArr.reduce(totalWages, 0));
